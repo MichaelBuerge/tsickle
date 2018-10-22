@@ -1,0 +1,200 @@
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define("tsickle/src/typescript", ["require", "exports", "typescript", "typescript"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * @fileoverview Abstraction over the TypeScript API that makes multiple
+     * versions of TypeScript appear to be interoperable. Any time a breaking change
+     * in TypeScript affects Tsickle code, we should extend this shim to present an
+     * unbroken API.
+     * All code in tsickle should import from this location, not from 'typescript'.
+     */
+    // tslint:disable:no-any We need to do various unsafe casts between TS versions
+    var ts = require("typescript");
+    var typescript_1 = require("typescript");
+    exports.addSyntheticLeadingComment = typescript_1.addSyntheticLeadingComment;
+    exports.addSyntheticTrailingComment = typescript_1.addSyntheticTrailingComment;
+    exports.createArrayLiteral = typescript_1.createArrayLiteral;
+    exports.createArrayTypeNode = typescript_1.createArrayTypeNode;
+    exports.createArrowFunction = typescript_1.createArrowFunction;
+    exports.createAssignment = typescript_1.createAssignment;
+    exports.createBinary = typescript_1.createBinary;
+    exports.createBlock = typescript_1.createBlock;
+    exports.createCall = typescript_1.createCall;
+    exports.createCompilerHost = typescript_1.createCompilerHost;
+    exports.createElementAccess = typescript_1.createElementAccess;
+    exports.createExportSpecifier = typescript_1.createExportSpecifier;
+    exports.createFunctionDeclaration = typescript_1.createFunctionDeclaration;
+    exports.createFunctionExpression = typescript_1.createFunctionExpression;
+    exports.createFunctionTypeNode = typescript_1.createFunctionTypeNode;
+    exports.createIdentifier = typescript_1.createIdentifier;
+    exports.createIf = typescript_1.createIf;
+    exports.createIndexSignature = typescript_1.createIndexSignature;
+    exports.createKeywordTypeNode = typescript_1.createKeywordTypeNode;
+    exports.createLiteral = typescript_1.createLiteral;
+    exports.createLiteralTypeNode = typescript_1.createLiteralTypeNode;
+    exports.createNamedExports = typescript_1.createNamedExports;
+    exports.createNodeArray = typescript_1.createNodeArray;
+    exports.createNotEmittedStatement = typescript_1.createNotEmittedStatement;
+    exports.createNull = typescript_1.createNull;
+    exports.createObjectLiteral = typescript_1.createObjectLiteral;
+    exports.createParameter = typescript_1.createParameter;
+    exports.createParen = typescript_1.createParen;
+    exports.createProgram = typescript_1.createProgram;
+    exports.createProperty = typescript_1.createProperty;
+    exports.createPropertyAccess = typescript_1.createPropertyAccess;
+    exports.createPropertyAssignment = typescript_1.createPropertyAssignment;
+    exports.createPropertySignature = typescript_1.createPropertySignature;
+    exports.createSourceFile = typescript_1.createSourceFile;
+    exports.createStatement = typescript_1.createStatement;
+    exports.createToken = typescript_1.createToken;
+    exports.createTypeLiteralNode = typescript_1.createTypeLiteralNode;
+    exports.createTypeReferenceNode = typescript_1.createTypeReferenceNode;
+    exports.createUnionTypeNode = typescript_1.createUnionTypeNode;
+    exports.createVariableDeclaration = typescript_1.createVariableDeclaration;
+    exports.createVariableDeclarationList = typescript_1.createVariableDeclarationList;
+    exports.createVariableStatement = typescript_1.createVariableStatement;
+    exports.DiagnosticCategory = typescript_1.DiagnosticCategory;
+    exports.EmitFlags = typescript_1.EmitFlags;
+    exports.flattenDiagnosticMessageText = typescript_1.flattenDiagnosticMessageText;
+    exports.forEachChild = typescript_1.forEachChild;
+    exports.formatDiagnostics = typescript_1.formatDiagnostics;
+    exports.getCombinedModifierFlags = typescript_1.getCombinedModifierFlags;
+    exports.getCombinedNodeFlags = typescript_1.getCombinedNodeFlags;
+    exports.getLeadingCommentRanges = typescript_1.getLeadingCommentRanges;
+    exports.getLineAndCharacterOfPosition = typescript_1.getLineAndCharacterOfPosition;
+    exports.getMutableClone = typescript_1.getMutableClone;
+    exports.getOriginalNode = typescript_1.getOriginalNode;
+    exports.getPreEmitDiagnostics = typescript_1.getPreEmitDiagnostics;
+    exports.getSyntheticLeadingComments = typescript_1.getSyntheticLeadingComments;
+    exports.getSyntheticTrailingComments = typescript_1.getSyntheticTrailingComments;
+    exports.getTrailingCommentRanges = typescript_1.getTrailingCommentRanges;
+    exports.IndexKind = typescript_1.IndexKind;
+    exports.isArrowFunction = typescript_1.isArrowFunction;
+    exports.isAssertionExpression = typescript_1.isAssertionExpression;
+    exports.isBinaryExpression = typescript_1.isBinaryExpression;
+    exports.isCallExpression = typescript_1.isCallExpression;
+    exports.isExportAssignment = typescript_1.isExportAssignment;
+    exports.isExportDeclaration = typescript_1.isExportDeclaration;
+    exports.isExpressionStatement = typescript_1.isExpressionStatement;
+    exports.isExternalModule = typescript_1.isExternalModule;
+    exports.isExternalModuleReference = typescript_1.isExternalModuleReference;
+    exports.isFunctionDeclaration = typescript_1.isFunctionDeclaration;
+    exports.isIdentifier = typescript_1.isIdentifier;
+    exports.isImportDeclaration = typescript_1.isImportDeclaration;
+    exports.isImportEqualsDeclaration = typescript_1.isImportEqualsDeclaration;
+    exports.isInterfaceDeclaration = typescript_1.isInterfaceDeclaration;
+    exports.isLiteralExpression = typescript_1.isLiteralExpression;
+    exports.isLiteralTypeNode = typescript_1.isLiteralTypeNode;
+    exports.isMethodSignature = typescript_1.isMethodSignature;
+    exports.isModuleBlock = typescript_1.isModuleBlock;
+    exports.isModuleDeclaration = typescript_1.isModuleDeclaration;
+    exports.isNamedImports = typescript_1.isNamedImports;
+    exports.isNamespaceExportDeclaration = typescript_1.isNamespaceExportDeclaration;
+    exports.isNamespaceImport = typescript_1.isNamespaceImport;
+    exports.isNonNullExpression = typescript_1.isNonNullExpression;
+    exports.isObjectLiteralExpression = typescript_1.isObjectLiteralExpression;
+    exports.isParenthesizedExpression = typescript_1.isParenthesizedExpression;
+    exports.isPropertyAccessExpression = typescript_1.isPropertyAccessExpression;
+    exports.isPropertyAssignment = typescript_1.isPropertyAssignment;
+    exports.isPropertyDeclaration = typescript_1.isPropertyDeclaration;
+    exports.isPropertySignature = typescript_1.isPropertySignature;
+    exports.isQualifiedName = typescript_1.isQualifiedName;
+    exports.isSourceFile = typescript_1.isSourceFile;
+    exports.isStringLiteral = typescript_1.isStringLiteral;
+    exports.isTypeReferenceNode = typescript_1.isTypeReferenceNode;
+    exports.isVariableDeclaration = typescript_1.isVariableDeclaration;
+    exports.isVariableStatement = typescript_1.isVariableStatement;
+    exports.ModifierFlags = typescript_1.ModifierFlags;
+    exports.ModuleKind = typescript_1.ModuleKind;
+    exports.NodeFlags = typescript_1.NodeFlags;
+    exports.ObjectFlags = typescript_1.ObjectFlags;
+    exports.parseCommandLine = typescript_1.parseCommandLine;
+    exports.parseJsonConfigFileContent = typescript_1.parseJsonConfigFileContent;
+    exports.readConfigFile = typescript_1.readConfigFile;
+    exports.resolveModuleName = typescript_1.resolveModuleName;
+    exports.ScriptTarget = typescript_1.ScriptTarget;
+    exports.setCommentRange = typescript_1.setCommentRange;
+    exports.setEmitFlags = typescript_1.setEmitFlags;
+    exports.setOriginalNode = typescript_1.setOriginalNode;
+    exports.setSourceMapRange = typescript_1.setSourceMapRange;
+    exports.setSyntheticLeadingComments = typescript_1.setSyntheticLeadingComments;
+    exports.setSyntheticTrailingComments = typescript_1.setSyntheticTrailingComments;
+    exports.setTextRange = typescript_1.setTextRange;
+    exports.SignatureKind = typescript_1.SignatureKind;
+    exports.SymbolFlags = typescript_1.SymbolFlags;
+    exports.SymbolFormatFlags = typescript_1.SymbolFormatFlags;
+    exports.SyntaxKind = typescript_1.SyntaxKind;
+    exports.sys = typescript_1.sys;
+    exports.TypeFlags = typescript_1.TypeFlags;
+    exports.updateAsExpression = typescript_1.updateAsExpression;
+    exports.updateBlock = typescript_1.updateBlock;
+    exports.updateConstructor = typescript_1.updateConstructor;
+    exports.updateExportDeclaration = typescript_1.updateExportDeclaration;
+    exports.updateExpressionWithTypeArguments = typescript_1.updateExpressionWithTypeArguments;
+    exports.updateGetAccessor = typescript_1.updateGetAccessor;
+    exports.updateHeritageClause = typescript_1.updateHeritageClause;
+    exports.updateMethod = typescript_1.updateMethod;
+    exports.updateNamedExports = typescript_1.updateNamedExports;
+    exports.updateNonNullExpression = typescript_1.updateNonNullExpression;
+    exports.updateParameter = typescript_1.updateParameter;
+    exports.updatePropertyAccess = typescript_1.updatePropertyAccess;
+    exports.updateSetAccessor = typescript_1.updateSetAccessor;
+    exports.updateSourceFileNode = typescript_1.updateSourceFileNode;
+    exports.updateTypeAssertion = typescript_1.updateTypeAssertion;
+    exports.visitEachChild = typescript_1.visitEachChild;
+    exports.visitFunctionBody = typescript_1.visitFunctionBody;
+    exports.visitLexicalEnvironment = typescript_1.visitLexicalEnvironment;
+    exports.visitNode = typescript_1.visitNode;
+    exports.visitParameterList = typescript_1.visitParameterList;
+    // tslint:disable-next-line:variable-name Re-exporting JSDocSignature for backwards compat.
+    exports.SyntaxKindJSDocSignature = ts.SyntaxKind.JSDocSignature;
+    // getEmitFlags is now private starting in TS 2.5.
+    // So we define our own method that calls through to TypeScript to defeat the
+    // visibility constraint.
+    function getEmitFlags(node) {
+        return ts.getEmitFlags(node);
+    }
+    exports.getEmitFlags = getEmitFlags;
+    // Between TypeScript 2.4 and 2.5 updateProperty was modified. If called with 2.4 re-order the
+    // parameters.
+    exports.updateProperty = ts.updateProperty;
+    var _a = __read(ts.version.split('.'), 2), major = _a[0], minor = _a[1];
+    if (major === '2' && minor === '4') {
+        var updateProperty24_1 = ts.updateProperty;
+        exports.updateProperty = function (node, decorators, modifiers, name, questionToken, type, initializer) {
+            return updateProperty24_1(node, decorators, modifiers, name, type, initializer);
+        };
+    }
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHlwZXNjcmlwdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy90eXBlc2NyaXB0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7R0FNRzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQUVIOzs7Ozs7T0FNRztJQUVILCtFQUErRTtJQUUvRSwrQkFBaUM7SUFLakMseUNBQXNzSTtJQUFwckksa0RBQUEsMEJBQTBCLENBQUE7SUFBRSxtREFBQSwyQkFBMkIsQ0FBQTtJQUE0TiwwQ0FBQSxrQkFBa0IsQ0FBQTtJQUFFLDJDQUFBLG1CQUFtQixDQUFBO0lBQUUsMkNBQUEsbUJBQW1CLENBQUE7SUFBRSx3Q0FBQSxnQkFBZ0IsQ0FBQTtJQUFFLG9DQUFBLFlBQVksQ0FBQTtJQUFFLG1DQUFBLFdBQVcsQ0FBQTtJQUFFLGtDQUFBLFVBQVUsQ0FBQTtJQUFFLDBDQUFBLGtCQUFrQixDQUFBO0lBQUUsMkNBQUEsbUJBQW1CLENBQUE7SUFBRSw2Q0FBQSxxQkFBcUIsQ0FBQTtJQUFFLGlEQUFBLHlCQUF5QixDQUFBO0lBQUUsZ0RBQUEsd0JBQXdCLENBQUE7SUFBRSw4Q0FBQSxzQkFBc0IsQ0FBQTtJQUFFLHdDQUFBLGdCQUFnQixDQUFBO0lBQUUsZ0NBQUEsUUFBUSxDQUFBO0lBQUUsNENBQUEsb0JBQW9CLENBQUE7SUFBRSw2Q0FBQSxxQkFBcUIsQ0FBQTtJQUFFLHFDQUFBLGFBQWEsQ0FBQTtJQUFFLDZDQUFBLHFCQUFxQixDQUFBO0lBQUUsMENBQUEsa0JBQWtCLENBQUE7SUFBRSx1Q0FBQSxlQUFlLENBQUE7SUFBRSxpREFBQSx5QkFBeUIsQ0FBQTtJQUFFLGtDQUFBLFVBQVUsQ0FBQTtJQUFFLDJDQUFBLG1CQUFtQixDQUFBO0lBQUUsdUNBQUEsZUFBZSxDQUFBO0lBQUUsbUNBQUEsV0FBVyxDQUFBO0lBQUUscUNBQUEsYUFBYSxDQUFBO0lBQUUsc0NBQUEsY0FBYyxDQUFBO0lBQUUsNENBQUEsb0JB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QUFFO1FBQ2xDLElBQU0sa0JBQWdCLEdBQUcsRUFBRSxDQUFDLGNBQW1ELENBQUM7UUFDaEYsc0JBQWMsR0FBRyxVQUFDLElBQTRCLEVBQUUsVUFBaUQsRUFDL0UsU0FBK0MsRUFBRSxJQUE0QixFQUM3RSxhQUF5QyxFQUFFLElBQTJCLEVBQ3RFLFdBQW9DO1lBQ3BELE9BQU8sa0JBQWdCLENBQ1osSUFBdUMsRUFBRSxVQUFxQyxFQUM5RSxTQUFnQixFQUFFLElBQVcsRUFBRSxJQUFXLEVBQUUsV0FBa0IsQ0FBUSxDQUFDO1FBQ3BGLENBQUMsQ0FBQztLQUNIIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAbGljZW5zZVxuICogQ29weXJpZ2h0IEdvb2dsZSBJbmMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQuXG4gKlxuICogVXNlIG9mIHRoaXMgc291cmNlIGNvZGUgaXMgZ292ZXJuZWQgYnkgYW4gTUlULXN0eWxlIGxpY2Vuc2UgdGhhdCBjYW4gYmVcbiAqIGZvdW5kIGluIHRoZSBMSUNFTlNFIGZpbGUgYXQgaHR0cHM6Ly9hbmd1bGFyLmlvL2xpY2Vuc2VcbiAqL1xuXG4vKipcbiAqIEBmaWxlb3ZlcnZpZXcgQWJzdHJhY3Rpb24gb3ZlciB0aGUgVHlwZVNjcmlwdCBBUEkgdGhhdCBtYWtlcyBtdWx0aXBsZVxuICogdmVyc2lvbnMgb2YgVHlwZVNjcmlwdCBhcHBlYXIgdG8gYmUgaW50ZXJvcGVyYWJsZS4gQW55IHRpbWUgYSBicmVha2luZyBjaGFuZ2VcbiAqIGluIFR5cGVTY3JpcHQgYWZmZWN0cyBUc2lja2xlIGNvZGUsIHdlIHNob3VsZCBleHRlbmQgdGhpcyBzaGltIHRvIHByZXNlbnQgYW5cbiAqIHVuYnJva2VuIEFQSS5cbiAqIEFsbCBjb2RlIGluIHRzaWNrbGUgc2hvdWxkIGltcG9ydCBmcm9tIHRoaXMgbG9jYXRpb24sIG5vdCBmcm9tICd0eXBlc2NyaXB0Jy5cbiAqL1xuXG4vLyB0c2xpbnQ6ZGlzYWJsZTpuby1hbnkgV2UgbmVlZCB0byBkbyB2YXJpb3VzIHVuc2FmZSBjYXN0cyBiZXR3ZWVuIFRTIHZlcnNpb25zXG5cbmltcG9ydCAqIGFzIHRzIGZyb20gJ3R5cGVzY3JpcHQnO1xuXG4vLyBOb3RlLCB0aGlzIGltcG9ydCBkZXBlbmRzIG9uIGEgZ2VucnVsZSBjb3B5aW5nIHRoZSAuZC50cyBmaWxlIHRvIHRoaXMgcGFja2FnZVxuaW1wb3J0ICogYXMgdHMyNCBmcm9tICcuL3R5cGVzY3JpcHQtMi40JztcblxuZXhwb3J0IHtfX1N0cmluZywgYWRkU3ludGhldGljTGVhZGluZ0NvbW1lbnQsIGFkZFN5bnRoZXRpY1RyYWlsaW5nQ29tbWVudCwgQXNFeHByZXNzaW9uLCBBc3NlcnRpb25FeHByZXNzaW9uLCBCaW5hcnlFeHByZXNzaW9uLCBCbG9jaywgQ2FsbEV4cHJlc3Npb24sIENhbmNlbGxhdGlvblRva2VuLCBDbGFzc0RlY2xhcmF0aW9uLCBDbGFzc0VsZW1lbnQsIENsYXNzTGlrZURlY2xhcmF0aW9uLCBDb21tZW50UmFuZ2UsIENvbXBpbGVySG9zdCwgQ29tcGlsZXJPcHRpb25zLCBDb25zdHJ1Y3RvckRlY2xhcmF0aW9uLCBjcmVhdGVBcnJheUxpdGVyYWwsIGNyZWF0ZUFycmF5VHlwZU5vZGUsIGNyZWF0ZUFycm93RnVuY3Rpb24sIGNyZWF0ZUFzc2lnbm1lbnQsIGNyZWF0ZUJpbmFyeSwgY3JlYXRlQmxvY2ssIGNyZWF0ZUNhbGwsIGNyZWF0ZUNvbXBpbGVySG9zdCwgY3JlYXRlRWxlbWVudEFjY2VzcywgY3JlYXRlRXhwb3J0U3BlY2lmaWVyLCBjcmVhdGVGdW5jdGlvbkRlY2xhcmF0aW9uLCBjcmVhdGVGdW5jdGlvbkV4cHJlc3Npb24sIGNyZWF0ZUZ1bmN0aW9uVHlwZU5vZGUsIGNyZWF0ZUlkZW50aWZpZXIsIGNyZWF0ZUlmLCBjcmVhdGVJbmRleFNpZ25hdHVyZSwgY3JlYXRlS2V5d29yZFR5cGVOb2RlLCBjcmVhdGVMaXRlcmFsLCBjcmVhdGVMaXRlcmFsVHlwZU5vZGUsIGNyZWF0ZU5hbWVkRXhwb3J0cywgY3JlYXRlTm9kZUFycmF5LCBjcmVhdGVOb3RFbWl0dGVkU3RhdGVtZW50LCBjcmVhdGVOdWxsLCBjcmVhdGVPYmplY3RMaXRlcmFsLCBjcmVhdGVQYXJhbWV0ZXIsIGNyZWF0ZVBhcmVuLCBjcmVhdGVQcm9ncmFtLCBjcmVhdGVQcm9wZXJ0eSwgY3JlYXRlUHJvcGVydHlBY2Nlc3MsIGNyZWF0ZVByb3BlcnR5QXNzaWdubWVudCwgY3JlYXRlUHJvcGVydHlTaWduYXR1cmUsIGNyZWF0ZVNvdXJjZUZpbGUsIGNyZWF0ZVN0YXRlbWVudCwgY3JlYXRlVG9rZW4sIGNyZWF0ZVR5cGVMaXRlcmFsTm9kZSwgY3JlYXRlVHlwZVJlZmVyZW5jZU5vZGUsIGNyZWF0ZVVuaW9uVHlwZU5vZGUsIGNyZWF0ZVZhcmlhYmxlRGVjbGFyYXRpb24sIGNyZWF0ZVZhcmlhYmxlRGVjbGFyYXRpb25MaXN0LCBjcmVhdGVWYXJpYWJsZVN0YXRlbWVudCwgQ3VzdG9tVHJhbnNmb3JtZXJzLCBEZWNsYXJhdGlvbiwgRGVjbGFyYXRpb25TdGF0ZW1lbnQsIERlY2xhcmF0aW9uV2l0aFR5cGVQYXJhbWV0ZXJzLCBEZWNvcmF0b3IsIERpYWdub3N0aWMsIERpYWdub3N0aWNDYXRlZ29yeSwgRWxlbWVudEFjY2Vzc0V4cHJlc3Npb24sIEVtaXRGbGFncywgRW1pdFJlc3VsdCwgRW50aXR5TmFtZSwgRW51bURlY2xhcmF0aW9uLCBFbnVtTWVtYmVyLCBFeHBvcnREZWNsYXJhdGlvbiwgRXhwb3J0U3BlY2lmaWVyLCBFeHByZXNzaW9uLCBFeHByZXNzaW9uU3RhdGVtZW50LCBmbGF0dGVuRGlhZ25vc3RpY01lc3NhZ2VUZXh0LCBmb3JFYWNoQ2hpbGQsIGZvcm1hdERpYWdub3N0aWNzLCBGb3JtYXREaWFnbm9zdGljc0hvc3QsIEZ1bmN0aW9uRGVjbGFyYXRpb24sIEZ1bmN0aW9uTGlrZURlY2xhcmF0aW9uLCBHZXRBY2Nlc3NvckRlY2xhcmF0aW9uLCBnZXRDb21iaW5lZE1vZGlmaWVyRmxhZ3MsIGdldENvbWJpbmVkTm9kZUZsYWdzLCBnZXRMZWFkaW5nQ29tbWVudFJhbmdlcywgZ2V0TGluZUFuZENoYXJhY3Rlck9mUG9zaXRpb24sIGdldE11dGFibGVDbG9uZSwgZ2V0T3JpZ2luYWxOb2RlLCBnZXRQcmVFbWl0RGlhZ25vc3RpY3MsIGdldFN5bnRoZXRpY0xlYWRpbmdDb21tZW50cywgZ2V0U3ludGhldGljVHJhaWxpbmdDb21tZW50cywgZ2V0VHJhaWxpbmdDb21tZW50UmFuZ2VzLCBIZXJpdGFnZUNsYXVzZSwgSWRlbnRpZmllciwgSWZTdGF0ZW1lbnQsIEltcG9ydERlY2xhcmF0aW9uLCBJbXBvcnRFcXVhbHNEZWNsYXJhdGlvbiwgSW1wb3J0U3BlY2lmaWVyLCBJbmRleEtpbmQsIEludGVyZmFjZURlY2xhcmF0aW9uLCBpc0Fycm93RnVuY3Rpb24sIGlzQXNzZXJ0aW9uRXhwcmVzc2lvbiwgaXNCaW5hcnlFeHByZXNzaW9uLCBpc0NhbGxFeHByZXNzaW9uLCBpc0V4cG9ydEFzc2lnbm1lbnQsIGlzRXhwb3J0RGVjbGFyYXRpb24sIGlzRXhwcmVzc2lvblN0YXRlbWVudCwgaXNFeHRlcm5hbE1vZHVsZSwgaXNFeHRlcm5hbE1vZHVsZVJlZmVyZW5jZSwgaXNGdW5jdGlvbkRlY2xhcmF0aW9uLCBpc0lkZW50aWZpZXIsIGlzSW1wb3J0RGVjbGFyYXRpb24sIGlzSW1wb3J0RXF1YWxzRGVjbGFyYXRpb24sIGlzSW50ZXJmYWNlRGVjbGFyYXRpb24sIGlzTGl0ZXJhbEV4cHJlc3Npb24sIGlzTGl0ZXJhbFR5cGVOb2RlLCBpc01ldGhvZFNpZ25hdHVyZSwgaXNNb2R1bGVCbG9jaywgaXNNb2R1bGVEZWNsYXJhdGlvbiwgaXNOYW1lZEltcG9ydHMsIGlzTmFtZXNwYWNlRXhwb3J0RGVjbGFyYXRpb24sIGlzTmFtZXNwYWNlSW1wb3J0LCBpc05vbk51bGxFeHByZXNzaW9uLCBpc09iamVjdExpdGVyYWxFeHByZXNzaW9uLCBpc1BhcmVudGhlc2l6ZWRFeHByZXNzaW9uLCBpc1Byb3BlcnR5QWNjZXNzRXhwcmVzc2lvbiwgaXNQcm9wZXJ0eUFzc2lnbm1lbnQsIGlzUHJvcGVydHlEZWNsYXJhdGlvbiwgaXNQcm9wZXJ0eVNpZ25hdHVyZSwgaXNRdWFsaWZpZWROYW1lLCBpc1NvdXJjZUZpbGUsIGlzU3RyaW5nTGl0ZXJhbCwgaXNUeXBlUmVmZXJlbmNlTm9kZSwgaXNWYXJpYWJsZURlY2xhcmF0aW9uLCBpc1ZhcmlhYmxlU3RhdGVtZW50LCBNZXRob2REZWNsYXJhdGlvbiwgTW9kaWZpZXIsIE1vZGlmaWVyRmxhZ3MsIE1vZHVsZUJsb2NrLCBNb2R1bGVEZWNsYXJhdGlvbiwgTW9kdWxlS2luZCwgTW9kdWxlUmVzb2x1dGlvbkhvc3QsIE5hbWVkRGVjbGFyYXRpb24sIE5hbWVkSW1wb3J0cywgTmFtZXNwYWNlRXhwb3J0RGVjbGFyYXRpb24sIE5vZGUsIE5vZGVBcnJheSwgTm9kZUZsYWdzLCBOb25OdWxsRXhwcmVzc2lvbiwgTm90RW1pdHRlZFN0YXRlbWVudCwgT2JqZWN0RmxhZ3MsIE9iamVjdExpdGVyYWxFbGVtZW50TGlrZSwgT2JqZWN0TGl0ZXJhbEV4cHJlc3Npb24sIE9iamVjdFR5cGUsIFBhcmFtZXRlckRlY2xhcmF0aW9uLCBwYXJzZUNvbW1hbmRMaW5lLCBwYXJzZUpzb25Db25maWdGaWxlQ29udGVudCwgUHJvZ3JhbSwgUHJvcGVydHlBY2Nlc3NFeHByZXNzaW9uLCBQcm9wZXJ0eUFzc2lnbm1lbnQsIFByb3BlcnR5RGVjbGFyYXRpb24sIFByb3BlcnR5TmFtZSwgUHJvcGVydHlTaWduYXR1cmUsIFF1YWxpZmllZE5hbWUsIHJlYWRDb25maWdGaWxlLCByZXNvbHZlTW9kdWxlTmFtZSwgU2NyaXB0VGFyZ2V0LCBTZXRBY2Nlc3NvckRlY2xhcmF0aW9uLCBzZXRDb21tZW50UmFuZ2UsIHNldEVtaXRGbGFncywgc2V0T3JpZ2luYWxOb2RlLCBzZXRTb3VyY2VNYXBSYW5nZSwgc2V0U3ludGhldGljTGVhZGluZ0NvbW1lbnRzLCBzZXRTeW50aGV0aWNUcmFpbGluZ0NvbW1lbnRzLCBzZXRUZXh0UmFuZ2UsIFNpZ25hdHVyZSwgU2lnbmF0dXJlRGVjbGFyYXRpb24sIFNpZ25hdHVyZUtpbmQsIFNvdXJjZUZpbGUsIFN0YXRlbWVudCwgU3RyaW5nTGl0ZXJhbCwgU3ltYm9sLCBTeW1ib2xGbGFncywgU3ltYm9sRm9ybWF0RmxhZ3MsIFN5bWJvbFdyaXRlciwgU3ludGF4S2luZCwgU3ludGhlc2l6ZWRDb21tZW50LCBzeXMsIFRleHRSYW5nZSwgVGhpc0V4cHJlc3Npb24sIFRva2VuLCBUcmFuc2Zvcm1hdGlvbkNvbnRleHQsIFRyYW5zZm9ybWVyLCBUcmFuc2Zvcm1lckZhY3RvcnksIFR5cGUsIFR5cGVBbGlhc0RlY2xhcmF0aW9uLCBUeXBlQXNzZXJ0aW9uLCBUeXBlQ2hlY2tlciwgVHlwZUVsZW1lbnQsIFR5cGVGbGFncywgVHlwZU5vZGUsIFR5cGVQYXJhbWV0ZXJEZWNsYXJhdGlvbiwgVHlwZVJlZmVyZW5jZSwgVHlwZVJlZmVyZW5jZU5vZGUsIFVuaW9uVHlwZSwgdXBkYXRlQXNFeHByZXNzaW9uLCB1cGRhdGVCbG9jaywgdXBkYXRlQ29uc3RydWN0b3IsIHVwZGF0ZUV4cG9ydERlY2xhcmF0aW9uLCB1cGRhdGVFeHByZXNzaW9uV2l0aFR5cGVBcmd1bWVudHMsIHVwZGF0ZUdldEFjY2Vzc29yLCB1cGRhdGVIZXJpdGFnZUNsYXVzZSwgdXBkYXRlTWV0aG9kLCB1cGRhdGVOYW1lZEV4cG9ydHMsIHVwZGF0ZU5vbk51bGxFeHByZXNzaW9uLCB1cGRhdGVQYXJhbWV0ZXIsIHVwZGF0ZVByb3BlcnR5QWNjZXNzLCB1cGRhdGVTZXRBY2Nlc3NvciwgdXBkYXRlU291cmNlRmlsZU5vZGUsIHVwZGF0ZVR5cGVBc3NlcnRpb24sIFZhcmlhYmxlRGVjbGFyYXRpb24sIFZhcmlhYmxlU3RhdGVtZW50LCB2aXNpdEVhY2hDaGlsZCwgdmlzaXRGdW5jdGlvbkJvZHksIHZpc2l0TGV4aWNhbEVudmlyb25tZW50LCB2aXNpdE5vZGUsIFZpc2l0b3IsIHZpc2l0UGFyYW1ldGVyTGlzdCwgV3JpdGVGaWxlQ2FsbGJhY2t9IGZyb20gJ3R5cGVzY3JpcHQnO1xuXG4vLyB0c2xpbnQ6ZGlzYWJsZS1uZXh0LWxpbmU6dmFyaWFibGUtbmFtZSBSZS1leHBvcnRpbmcgSlNEb2NTaWduYXR1cmUgZm9yIGJhY2t3YXJkcyBjb21wYXQuXG5leHBvcnQgY29uc3QgU3ludGF4S2luZEpTRG9jU2lnbmF0dXJlID0gdHMuU3ludGF4S2luZC5KU0RvY1NpZ25hdHVyZTtcblxuLy8gZ2V0RW1pdEZsYWdzIGlzIG5vdyBwcml2YXRlIHN0YXJ0aW5nIGluIFRTIDIuNS5cbi8vIFNvIHdlIGRlZmluZSBvdXIgb3duIG1ldGhvZCB0aGF0IGNhbGxzIHRocm91Z2ggdG8gVHlwZVNjcmlwdCB0byBkZWZlYXQgdGhlXG4vLyB2aXNpYmlsaXR5IGNvbnN0cmFpbnQuXG5leHBvcnQgZnVuY3Rpb24gZ2V0RW1pdEZsYWdzKG5vZGU6IHRzLk5vZGUpOiB0cy5FbWl0RmxhZ3N8dW5kZWZpbmVkIHtcbiAgcmV0dXJuICh0cyBhcyBhbnkpLmdldEVtaXRGbGFncyhub2RlKTtcbn1cblxuLy8gQmV0d2VlbiBUeXBlU2NyaXB0IDIuNCBhbmQgMi41IHVwZGF0ZVByb3BlcnR5IHdhcyBtb2RpZmllZC4gSWYgY2FsbGVkIHdpdGggMi40IHJlLW9yZGVyIHRoZVxuLy8gcGFyYW1ldGVycy5cbmV4cG9ydCBsZXQgdXBkYXRlUHJvcGVydHkgPSB0cy51cGRhdGVQcm9wZXJ0eTtcblxuY29uc3QgW21ham9yLCBtaW5vcl0gPSB0cy52ZXJzaW9uLnNwbGl0KCcuJyk7XG5pZiAobWFqb3IgPT09ICcyJyAmJiBtaW5vciA9PT0gJzQnKSB7XG4gIGNvbnN0IHVwZGF0ZVByb3BlcnR5MjQgPSB0cy51cGRhdGVQcm9wZXJ0eSBhcyBhbnkgYXMgdHlwZW9mIHRzMjQudXBkYXRlUHJvcGVydHk7XG4gIHVwZGF0ZVByb3BlcnR5ID0gKG5vZGU6IHRzLlByb3BlcnR5RGVjbGFyYXRpb24sIGRlY29yYXRvcnM6IFJlYWRvbmx5QXJyYXk8dHMuRGVjb3JhdG9yPnx1bmRlZmluZWQsXG4gICAgICAgICAgICAgICAgICAgIG1vZGlmaWVyczogUmVhZG9ubHlBcnJheTx0cy5Nb2RpZmllcj58dW5kZWZpbmVkLCBuYW1lOiBzdHJpbmd8dHMuUHJvcGVydHlOYW1lLFxuICAgICAgICAgICAgICAgICAgICBxdWVzdGlvblRva2VuOiB0cy5RdWVzdGlvblRva2VufHVuZGVmaW5lZCwgdHlwZTogdHMuVHlwZU5vZGV8dW5kZWZpbmVkLFxuICAgICAgICAgICAgICAgICAgICBpbml0aWFsaXplcjogdHMuRXhwcmVzc2lvbnx1bmRlZmluZWQpOiB0cy5Qcm9wZXJ0eURlY2xhcmF0aW9uID0+IHtcbiAgICByZXR1cm4gdXBkYXRlUHJvcGVydHkyNChcbiAgICAgICAgICAgICAgIG5vZGUgYXMgYW55IGFzIHRzMjQuUHJvcGVydHlEZWNsYXJhdGlvbiwgZGVjb3JhdG9ycyBhcyBhbnkgYXMgdHMyNC5EZWNvcmF0b3JbXSxcbiAgICAgICAgICAgICAgIG1vZGlmaWVycyBhcyBhbnksIG5hbWUgYXMgYW55LCB0eXBlIGFzIGFueSzCoGluaXRpYWxpemVyIGFzIGFueSkgYXMgYW55O1xuICB9O1xufVxuIl19
