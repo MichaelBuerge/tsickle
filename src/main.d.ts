@@ -12,6 +12,8 @@ export interface Settings {
     isTyped?: boolean;
     /** If true, log internal debug warnings to the console. */
     verbose?: boolean;
+    /** No types (emits ? in type annotations, no forward declarations). */
+    untyped?: boolean;
 }
 /**
  * Determine the lowest-level common parent directory of the given list of files.
