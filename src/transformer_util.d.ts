@@ -8,7 +8,7 @@
 /// <amd-module name="tsickle/src/transformer_util" />
 import * as ts from './typescript';
 /** @return true if node has the specified modifier flag set. */
-export declare function hasModifierFlag(node: ts.Node, flag: ts.ModifierFlags): boolean;
+export declare function hasModifierFlag(declaration: ts.Declaration, flag: ts.ModifierFlags): boolean;
 /** Returns true if fileName is a .d.ts file. */
 export declare function isDtsFileName(fileName: string): boolean;
 /** Returns the string contents of a ts.Identifier. */

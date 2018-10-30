@@ -51,8 +51,13 @@ export interface EmitResult extends ts.EmitResult {
     };
 }
 export interface EmitTransformers {
+    /** Custom transformers to evaluate before Tsickle .js transformations. */
     beforeTsickle?: Array<ts.TransformerFactory<ts.SourceFile>>;
+    /** Custom transformers to evaluate before built-in .js transformations. */
     beforeTs?: Array<ts.TransformerFactory<ts.SourceFile>>;
+    /** Custom transformers to evaluate after built-in .js transformations. */
     afterTs?: Array<ts.TransformerFactory<ts.SourceFile>>;
+    /** Custom transformers to evaluate after built-in .d.ts transformations. */
+    afterDeclarations?: Array<ts.TransformerFactory<ts.Bundle | ts.SourceFile>>;
 }
 export declare function emitWithTsickle(program: ts.Program, host: TsickleHost, tsHost: ts.CompilerHost, tsOptions: ts.CompilerOptions, targetSourceFile?: ts.SourceFile, writeFile?: ts.WriteFileCallback, cancellationToken?: ts.CancellationToken, emitOnlyDtsFiles?: boolean, customTransformers?: EmitTransformers): EmitResult;

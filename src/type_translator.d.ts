@@ -59,16 +59,11 @@ export declare class TypeTranslator {
      */
     constructor(host: AnnotatorHost, typeChecker: ts.TypeChecker, node: ts.Node, pathBlackList?: Set<string> | undefined, symbolsToAliasedNames?: Map<ts.Symbol, string>, ensureSymbolDeclared?: (sym: ts.Symbol) => void);
     /**
-     * Converts a ts.Symbol to a string.
-     * Other approaches that don't work:
-     * - TypeChecker.typeToString translates Array as T[].
-     * - TypeChecker.symbolToString emits types without their namespace,
-     *   and doesn't let you pass the flag to control that.
-     * @param useFqn whether to scope the name using its fully qualified name. Closure's template
-     *     arguments are always scoped to the class containing them, where TypeScript's template args
-     *     would be fully qualified. I.e. this flag is false for generic types.
+     * Converts a ts.Symbol to a string, applying aliases and ensuring symbols are imported.
+     * @return a string representation of the symbol as a valid Closure type name, or `undefined` if
+     *     the type cannot be expressed (e.g. for anonymous types).
      */
-    symbolToString(sym: ts.Symbol, useFqn: boolean): string;
+    symbolToString(sym: ts.Symbol): string | undefined;
     /**
      * Returns the mangled name prefix for symbol, or an empty string if not applicable.
      *
